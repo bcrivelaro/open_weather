@@ -3,7 +3,9 @@ RSpec.describe OpenWeather do
     expect(OpenWeather::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe '.client' do
+    subject { described_class.client }
+
+    it { is_expected.to be_a(OpenWeather::Client) }
   end
 end
