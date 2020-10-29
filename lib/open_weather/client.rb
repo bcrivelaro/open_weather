@@ -11,6 +11,12 @@ module OpenWeather
       OpenWeather::Resources::Weather.new(api_key, default_options)
     end
 
+    def forecast
+      raise MissingApiKeyError if !api_key
+
+      OpenWeather::Resources::Forecast.new(api_key, default_options)
+    end
+
     private
 
     attr_reader :api_key, :default_options
