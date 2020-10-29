@@ -16,4 +16,22 @@ RSpec.describe OpenWeather::Client do
       end
     end
   end
+
+  describe '#forecast' do
+    context 'when api key is present' do
+      it 'does return forecast resource' do
+        client = described_class.new('123456')
+
+        expect(client.forecast).to be_a(OpenWeather::Resources::Forecast)
+      end
+    end
+
+    context 'when api key is missing' do
+      it 'does raise OpenWeather::MissingApiKeyError' do
+        client = described_class.new
+
+        expect { client.forecast }.to raise_error(OpenWeather::MissingApiKeyError)
+      end
+    end
+  end
 end
