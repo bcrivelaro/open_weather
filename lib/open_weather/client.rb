@@ -17,6 +17,10 @@ module OpenWeather
       OpenWeather::Resources::Forecast.new(api_key, default_options)
     end
 
+    def city
+      OpenWeather::Resources::City.new
+    end
+
     private
 
     attr_reader :api_key, :default_options
