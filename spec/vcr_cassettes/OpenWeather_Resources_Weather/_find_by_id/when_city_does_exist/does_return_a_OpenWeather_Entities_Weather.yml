@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=41673c83811cd4c75275a187f7e1dfc9&id=6316729
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 29 Oct 2020 03:09:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '487'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?id=6316729"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-48.61,"lat":-27.59},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"base":"stations","main":{"temp":294.15,"feels_like":296.59,"temp_min":294.15,"temp_max":294.15,"pressure":1008,"humidity":83},"visibility":10000,"wind":{"speed":0.5,"deg":290},"rain":{"1h":0.13},"clouds":{"all":0},"dt":1603940978,"sys":{"type":1,"id":8360,"country":"BR","sunrise":1603959899,"sunset":1604007064},"timezone":-10800,"id":6316729,"name":"Campinas","cod":200}'
+  recorded_at: Thu, 29 Oct 2020 03:09:38 GMT
+recorded_with: VCR 6.0.0

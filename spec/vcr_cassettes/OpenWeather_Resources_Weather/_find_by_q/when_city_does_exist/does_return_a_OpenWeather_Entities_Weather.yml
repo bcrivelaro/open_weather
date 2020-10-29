@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=41673c83811cd4c75275a187f7e1dfc9&q=New%20York
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 29 Oct 2020 03:09:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '472'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=new%20york"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-74.01,"lat":40.71},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"base":"stations","main":{"temp":286.64,"feels_like":285.6,"temp_min":285.37,"temp_max":288.15,"pressure":1016,"humidity":87},"visibility":10000,"wind":{"speed":2.1,"deg":260},"clouds":{"all":75},"dt":1603940260,"sys":{"type":1,"id":4610,"country":"US","sunrise":1603884130,"sunset":1603922232},"timezone":-14400,"id":5128581,"name":"New
+        York","cod":200}'
+  recorded_at: Thu, 29 Oct 2020 03:09:37 GMT
+recorded_with: VCR 6.0.0
