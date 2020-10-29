@@ -1,5 +1,5 @@
 RSpec.describe OpenWeather::Resources::Weather do
-  let(:resource) { OpenWeather::Resources::Weather.new('41673c83811cd4c75275a187f7e1dfc9') }
+  let(:resource) { described_class.new('41673c83811cd4c75275a187f7e1dfc9') }
 
   describe '#find_by_q' do
     context 'when city does not exist' do
@@ -58,7 +58,7 @@ RSpec.describe OpenWeather::Resources::Weather do
   describe '#find_by' do
     context 'when api key is invalid' do
       it 'does raise an OpenWeather::InvalidApiKeyError', :vcr do
-        invalid_resource = OpenWeather::Resources::Weather.new('')
+        invalid_resource = described_class.new('')
 
         expect { invalid_resource.find_by({ foo: 'bar'}) }.to(
           raise_error(OpenWeather::InvalidApiKeyError)
